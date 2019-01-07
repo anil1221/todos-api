@@ -13,7 +13,7 @@ class JsonWebToken
     JWT.encode(payload, HMAC_SECRET)
   end
 
-  def decode(token)
+  def self.decode(token)
     # get pay_load; first index in decoded array
     body = JWT.decode(token, HMAC_SECRET)[0]
     HashWithIndifferentAccess.new body
